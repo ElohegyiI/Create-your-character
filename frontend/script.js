@@ -27,26 +27,28 @@ function loadEvent() {
         document.getElementById('root').appendChild(sect).appendChild(charSheet)
     
         
+
         
         divisionChar.insertAdjacentHTML("beforeend", ` 
         <form>
         <label for="charname">Character name:</label><br>
-        <input type="text" id="charname" name="charname" placeholder="Enter your charactername..."/>
+        <input type="text" id="charname" name="charname" placeholder="Enter your charactername..."</input>
         <p id="values"></p>
         </form>`
         );
 
         
         divisionClass.insertAdjacentHTML("beforeend", `
+        <form>
         <label for="class">Classes:</label>
             <select name="class" id="class">
-                <optgroup label='Pick a class'>
-                    
+                <optgroup label='Pick a class'>                    
                     <option value="Bard">Bard</option>
                     <option value="Rogue">Rogue</option>
                     <option value="Sorcerer">Sorcerer</option>
                 </optgroup>
-            </select>`
+            </select>
+        </form>`
         );
         
         divisionRaces.insertAdjacentHTML("beforeend", `<label for="race">Races:</  label>
@@ -69,20 +71,25 @@ function loadEvent() {
         );
         
         
-        const input = document.querySelector('input');
+    const input = document.querySelector('input');
         
-        const log = document.getElementById('values');
+    const log = document.getElementById('values');
             
-            input.addEventListener('input', updateValue);
+        input.addEventListener('input', updateValue);
             
-        function updateValue(e) {
-          log.textContent = e.target.value;
-          //console.log(updateValue(e))
-        }
-        
-        charSheet.insertAdjacentHTML("beforeend", `
+    function updateValue(e) {
+      log.textContent = e.target.value;
+      //console.log(updateValue(e))
+    }
+
+
+
+    charSheet.insertAdjacentHTML("beforeend", `
+        <h2>Your character:</h2>
         <p>${log}</p>`
         );
+    
+        
         
         
     }
