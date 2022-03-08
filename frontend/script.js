@@ -87,36 +87,36 @@ function loadEvent() {
 
 
     charSheet.insertAdjacentHTML("beforeend", `
-        <h2>Your character:</h2>`        
+        <h2>Your character:</h2>`      
         );
     
         
-        const selectElement = document.querySelector('#class');
-
+    const selectElement = document.querySelector('#class');
         selectElement.addEventListener('change', (event) => {
-          
-            const result = document.querySelector('.result');
-          
-            result.textContent = `${event.target.value}`;
-        });
-        
-        const selectElement1 = document.querySelector('#race');
-
+      
+    const result = document.querySelector('.result');
+    
+        result.textContent = `${event.target.value}`;
+    });
+    
+    const selectElement1 = document.querySelector('#race');
         selectElement1.addEventListener('change', (event) => {
-          
-            const result = document.querySelector('.resultRace');
-          
-            result.textContent = `${event.target.value}`;
-        });
+      
+    const result = document.querySelector('.resultRace');
+      
+        result.textContent = `${event.target.value}`;
+    });
 
-        const selectElement2 = document.querySelector('#gender');
-
+    const selectElement2 = document.querySelector('#gender');
         selectElement2.addEventListener('change', (event) => {
-          
-            const result = document.querySelector('.resultGen');
-          
-            result.textContent = `${event.target.value}`;
-        });
+      
+    const result = document.querySelector('.resultGen');
+    
+        result.textContent = `${event.target.value}`;
+    });
+
+
         
-    }
-    window.addEventListener("load", loadEvent)
+}
+    
+window.addEventListener("load", loadEvent)
