@@ -48,7 +48,8 @@ function loadEvent() {
                     <option value="Sorcerer">Sorcerer</option>
                 </optgroup>
             </select>
-        </form>`
+        </form>
+        <div class='result'</div>`
         );
         
         divisionRaces.insertAdjacentHTML("beforeend", `<label for="race">Races:</  label>
@@ -58,7 +59,8 @@ function loadEvent() {
                     <option value="Deep Gnome">Deep Gnome</option>
                     <option value="Dragon Born">Dragon Born (Gem)</option>
                 </optgroup>
-            </select>`
+            </select>
+            <div class='resultRace'</div>`
         );
         
         divisionGender.insertAdjacentHTML("beforeend", `<label          for="gender">Gender:</label>
@@ -67,30 +69,54 @@ function loadEvent() {
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </optgroup>
-            </select>`
+            </select>
+            <div class='resultGen'</div>`
         );
         
         
     const input = document.querySelector('input');
         
     const log = document.getElementById('values');
-            
-        input.addEventListener('input', updateValue);
-            
-    function updateValue(e) {
-      log.textContent = e.target.value;
-      //console.log(updateValue(e))
+     
+    const updateValue  = (event) => {
+        log.textContent = event.target.value;
     }
-
+    
+    
+    input.addEventListener('input', updateValue);
 
 
     charSheet.insertAdjacentHTML("beforeend", `
-        <h2>Your character:</h2>
-        <p>${log}</p>`
+        <h2>Your character:</h2>`        
         );
     
         
+        const selectElement = document.querySelector('#class');
+
+        selectElement.addEventListener('change', (event) => {
+          
+            const result = document.querySelector('.result');
+          
+            result.textContent = `${event.target.value}`;
+        });
         
+        const selectElement1 = document.querySelector('#race');
+
+        selectElement1.addEventListener('change', (event) => {
+          
+            const result = document.querySelector('.resultRace');
+          
+            result.textContent = `${event.target.value}`;
+        });
+
+        const selectElement2 = document.querySelector('#gender');
+
+        selectElement2.addEventListener('change', (event) => {
+          
+            const result = document.querySelector('.resultGen');
+          
+            result.textContent = `${event.target.value}`;
+        });
         
     }
     window.addEventListener("load", loadEvent)
