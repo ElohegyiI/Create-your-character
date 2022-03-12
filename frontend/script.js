@@ -32,7 +32,7 @@ function loadEvent() {
         divisionChar.insertAdjacentHTML("beforeend", ` 
         <form>
         <label for="charname">Character name:</label><br>
-        <input type="text" id="charname" name="charname" placeholder="Enter your charactername..."</input>
+        <input type="text" id="charname" name="charname" maxlength="8"</input>
         <p id="values"></p>
         </form>`
         );
@@ -52,22 +52,24 @@ function loadEvent() {
         <div class='result'</div>`
         );
         
+
         divisionRaces.insertAdjacentHTML("beforeend", `<label for="race">Races:</  label>
-            <select name="race" id="race">   
-                <optgroup label='Pick a race'>
-                    <option value="Bugbear">Bugbear</option>
-                    <option value="Deep Gnome">Deep Gnome</option>
-                    <option value="Dragon Born">Dragon Born (Gem)</option>
-                </optgroup>
-            </select>
-            <div class='resultRace'</div>`
+        <select name="race" id="race">   
+            <optgroup label='Pick a race'>
+                <option value="Bugbear">Bugbear</option>
+                <option value="Deep Gnome">Deep Gnome</option>
+                <option value="Dragon Born">Dragon Born (Gem)</option>
+            </optgroup>
+        </select>
+        <div class='resultRace'</div>`
+            
         );
         
         divisionGender.insertAdjacentHTML("beforeend", `<label          for="gender">Gender:</label>
             <select name="gender" id="gender">   
                 <optgroup label='Pick a gender'>
                     <option value="male">Male</option>
-                    <option value="female">Female</option>
+                    <option value="Female">Female</option>
                 </optgroup>
             </select>
             <div class='resultGen'</div>`
@@ -87,7 +89,9 @@ function loadEvent() {
 
 
     charSheet.insertAdjacentHTML("beforeend", `
-        <h2>Your character:</h2>`      
+        <h2>Your character:</h2>
+        <p>Szevasz</p><br>
+        <h2>Class:</h2>` 
         );
     
         
@@ -97,7 +101,21 @@ function loadEvent() {
     const result = document.querySelector('.result');
     
         result.textContent = `${event.target.value}`;
+
+        if (event.target.value === 'Bard') {
+
+            result.value.src = "images/bard-class-icon.jpg";
+
+        } else if ( event.target.value === 'Rogue' ) {
+
+            result.value.src = "images/rogue-class-icon.jpg";
+            
+        } else {
+
+            result.value.src = "images/sorcerer-class-icon.jpg";
+        }
     });
+
     
     const selectElement1 = document.querySelector('#race');
         selectElement1.addEventListener('change', (event) => {

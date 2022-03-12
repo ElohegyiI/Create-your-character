@@ -52,61 +52,68 @@ section {
   
 
 
-.charactername {
-    
-    margin-top: 40px;
+.charactername {    
+  margin-top: 40px;
 }
 
 .charactername form label {
-    font-size: 35px;
-    border-color: black;
+  font-size: 35px;
+  border-color: black;
 }
 
 .charactername form input {
-    border-color:cornsilk;
-    border-radius: 5px;
-    width: 450px;
-    height: 90px;
-    font-size: 20px;
-  }
+  height: 90px;
+  font-size: 20px;
+  border-color:cornsilk;
+  border-radius: 5px;
+  width: 30%;
+}
   
   
-  .charactername form #values {
-    position: absolute;
-    font-size: 30px;
-    font-weight: bold;
-    top: 70px;
-    left: 800px;
-    z-index: 99;
+.charactername form #values {
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  
+  z-index: 99;
   }
   
 .charactername form input text {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 
+
+input[type=text], select {  
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
 .classes label {
-    
-    font-size: 30px;
+  font-size: 30px;
 }
 
-.races label {
-    
-    font-size: 30px;
+.races label {    
+  font-size: 30px;
 }
 
-.gender label {
-  
+.gender label {  
   font-size: 30px;
 }
 
 .charactersheet {
-    position: relative;
-    background-color: blanchedalmond;
-    width: 400px;
-    height: 500px;
-    border-color: chartreuse;
-    margin-top: 40px;
-    margin-right: 100px;
+  position: relative;
+  background-color: blanchedalmond;
+  width: 400px;
+  height: 500px;
+  border-color: chartreuse;
+  margin-top: 40px;
+  margin-right: 100px;
 }
+
+
