@@ -34,23 +34,17 @@
   /* css reset */
 
 section {
-    display: flex;
-    flex-direction: column;
-    flex-flow: column wrap;
-    flex-wrap: wrap;
-    height: 100vh;
-    /*width: 100%;*/
-    row-gap: 100px;
-    font-family: 'Courier New', Courier, monospace;
-    margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column wrap;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100%;
+  row-gap: 100px;
+  font-family: 'Courier New', Courier, monospace;
+  padding-left: 100px;
+  background-color: black;
 }
-
-
-
-
-
-  
-
 
 .charactername {    
   margin-top: 40px;
@@ -58,15 +52,18 @@ section {
 
 .charactername form label {
   font-size: 35px;
-  border-color: black;
+  border-color: red;
+  color:salmon;
 }
 
 .charactername form input {
-  height: 90px;
+  height: 40px;
   font-size: 20px;
   border-color:cornsilk;
   border-radius: 5px;
-  width: 30%;
+  width: 60%;
+  border-color: salmon;
+  color: salmon;
 }
   
   
@@ -74,12 +71,13 @@ section {
   position: absolute;
   font-size: 30px;
   font-weight: bold;
-  
+  color: salmon;
   z-index: 99;
   }
   
 .charactername form input text {
   font-size: 30px;
+  color: salmon;
 }
 
 
@@ -92,28 +90,38 @@ input[type=text], select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  color: salmon;
+  background-color: black;
+  border-color: salmon;
 }
 
 .classes label {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .races label {    
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .gender label {  
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .charactersheet {
   position: relative;
-  background-color: blanchedalmond;
-  width: 400px;
-  height: 500px;
-  border-color: chartreuse;
+  background-color: salmon;
+  width: 450px;
+  height: 650px;
+  border-radius: 5px;
   margin-top: 40px;
-  margin-right: 100px;
+  /*margin-right: 100px;*/
 }
 
+h2 {
+  padding: 10px;
+}
+
+p {
+  padding: 10px;
+}
 

@@ -47,6 +47,7 @@ function loadEvent() {
                     <option value="Rogue">Rogue</option>
                     <option value="Sorcerer">Sorcerer</option>
                 </optgroup>
+                <output for="class"></output>
             </select>
         </form>
         <div class='result'</div>`
@@ -90,7 +91,7 @@ function loadEvent() {
 
     charSheet.insertAdjacentHTML("beforeend", `
         <h2>Your character:</h2>
-        <p>Szevasz</p><br>
+        <p>${charname}</p><br>
         <h2>Class:</h2>` 
         );
     
