@@ -26,18 +26,16 @@ function loadEvent() {
         charSheet.className = 'charactersheet'
         document.getElementById('root').appendChild(sect).appendChild(charSheet)
     
-        
 
         
         divisionChar.insertAdjacentHTML("beforeend", ` 
         <form>
         <label for="charname">Character name:</label><br>
         <input type="text" id="charname" name="charname" maxlength="8"</input>
-        <p id="values"></p>
         </form>`
         );
 
-        
+
         divisionClass.insertAdjacentHTML("beforeend", `
         <form>
         <label for="class">Classes:</label>
@@ -50,7 +48,7 @@ function loadEvent() {
                 <output for="class"></output>
             </select>
         </form>
-        <div class='result'</div>`
+        <div class='result'></div>`
         );
         
 
@@ -62,7 +60,7 @@ function loadEvent() {
                 <option value="Dragon Born">Dragon Born (Gem)</option>
             </optgroup>
         </select>
-        <div class='resultRace'</div>`
+        `
             
         );
         
@@ -73,48 +71,57 @@ function loadEvent() {
                     <option value="Female">Female</option>
                 </optgroup>
             </select>
-            <div class='resultGen'</div>`
+            `
         );
         
+   
+
+    charSheet.insertAdjacentHTML("beforeend", `
+        <h2>Your character:</h2>
+        <p id="crname"></p><br>
+        <h2>Class:</h2>
+        <div>
+        <img class='avatar' id='result'</img>
+        </div>
+        <h2>Race:</h2>
+        <div class='avatar-race' id='
+        ` 
         
+        );
+    
+           
     const input = document.querySelector('input');
         
-    const log = document.getElementById('values');
+    const log = document.getElementById('crname');
      
+
     const updateValue  = (event) => {
         log.textContent = event.target.value;
+         console.log
     }
     
     
     input.addEventListener('input', updateValue);
-
-
-    charSheet.insertAdjacentHTML("beforeend", `
-        <h2>Your character:</h2>
-        <p>${charname}</p><br>
-        <h2>Class:</h2>` 
-        );
-    
-        
+  
     const selectElement = document.querySelector('#class');
         selectElement.addEventListener('change', (event) => {
       
-    const result = document.querySelector('.result');
-    
-        result.textContent = `${event.target.value}`;
+        const result = document.getElementById('result');
+        
+           // result.textContent = `${event.target.value}`;
 
-        if (event.target.value === 'Bard') {
+            if (event.target.value === 'Bard') {
 
-            result.value.src = "images/bard-class-icon.jpg";
+                result.src = "images/bard-class-icon.jpg";
 
-        } else if ( event.target.value === 'Rogue' ) {
+            } else if ( event.target.value === 'Rogue' ) {
 
-            result.value.src = "images/rogue-class-icon.jpg";
-            
-        } else {
+                result.src = "images/rogue-class-icon.jpg";
+                
+            } else {
 
-            result.value.src = "images/sorcerer-class-icon.jpg";
-        }
+                result.src = "images/sorcerer-class-icon.jpg";
+            }
     });
 
     
@@ -123,7 +130,23 @@ function loadEvent() {
       
     const result = document.querySelector('.resultRace');
       
-        result.textContent = `${event.target.value}`;
+        //result.textContent = `${event.target.value}`;
+
+        if (event.target.value === 'Bugbear') {
+
+            result.src = "images/bugbear-race.png";
+
+        } else if ( event.target.value === 'Deep Gnome' ) {
+
+            result.src = "images/deep_gnome-race.jpg";
+            
+        } else {
+
+            result.src = "images/sorcerer-class-icon.jpg";
+        }
+
+
+
     });
 
     const selectElement2 = document.querySelector('#gender');
