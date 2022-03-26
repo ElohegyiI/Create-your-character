@@ -84,7 +84,9 @@ function loadEvent() {
         <img class='avatar' id='result'</img>
         </div>
         <h2>Race:</h2>
-        <div class='avatar-race' id='
+        <div>
+        <img class='avatar-race' id='resultrace'>
+        </div>
         ` 
         
         );
@@ -128,21 +130,21 @@ function loadEvent() {
     const selectElement1 = document.querySelector('#race');
         selectElement1.addEventListener('change', (event) => {
       
-    const result = document.querySelector('.resultRace');
+    const resultrace = document.getElementById('resultrace');
       
         //result.textContent = `${event.target.value}`;
 
         if (event.target.value === 'Bugbear') {
 
-            result.src = "images/bugbear-race.png";
+            resultrace.src = "images/bugbear-race.png";
 
         } else if ( event.target.value === 'Deep Gnome' ) {
 
-            result.src = "images/deep_gnome-race.jpg";
+            resultrace.src = "images/deep_gnome-race.jpg";
             
         } else {
 
-            result.src = "images/sorcerer-class-icon.jpg";
+            resultrace.src = "images/dragonborn-bard-race.jpg";
         }
 
 

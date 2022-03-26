@@ -122,12 +122,16 @@ h2 {
 }
 
 p {
+  margin-left: 150px;
   padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 img {
   
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
+  margin-left: 150px;
 }
 
