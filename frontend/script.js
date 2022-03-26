@@ -67,7 +67,7 @@ function loadEvent() {
         divisionGender.insertAdjacentHTML("beforeend", `<label          for="gender">Gender:</label>
             <select name="gender" id="gender">   
                 <optgroup label='Pick a gender'>
-                    <option value="male">Male</option>
+                    <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </optgroup>
             </select>
@@ -87,23 +87,24 @@ function loadEvent() {
         <div>
         <img class='avatar-race' id='resultrace'>
         </div>
-        ` 
-        
+        <h2>Gender:</h2>
+        <div>
+        <img class='avatar-gender' id='resultgender'>
+        </div>`     
         );
     
            
     const input = document.querySelector('input');
         
-    const log = document.getElementById('crname');
-     
+    const log = document.getElementById('crname');     
 
     const updateValue  = (event) => {
         log.textContent = event.target.value;
          console.log
-    }
-    
-    
+    }    
     input.addEventListener('input', updateValue);
+
+
   
     const selectElement = document.querySelector('#class');
         selectElement.addEventListener('change', (event) => {
@@ -132,7 +133,6 @@ function loadEvent() {
       
     const resultrace = document.getElementById('resultrace');
       
-        //result.textContent = `${event.target.value}`;
 
         if (event.target.value === 'Bugbear') {
 
@@ -147,16 +147,21 @@ function loadEvent() {
             resultrace.src = "images/dragonborn-bard-race.jpg";
         }
 
-
-
     });
 
     const selectElement2 = document.querySelector('#gender');
         selectElement2.addEventListener('change', (event) => {
       
-    const result = document.querySelector('.resultGen');
+    const resultgender = document.getElementById('resultgender');
     
-        result.textContent = `${event.target.value}`;
+        if ( event.target.value === 'Female' ) {
+
+            resultgender.src = "images/female-deepgnome-race.png";
+
+        } else {
+
+            resultgender.src = "images/dragonborn-male-race.jpg"
+        }
     });
 
 
